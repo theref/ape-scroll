@@ -4,8 +4,8 @@ To get started with working on the codebase, use the following steps prepare you
 
 ```bash
 # clone the github repo and navigate into the folder
-git clone https://github.com/ApeWorX/ape-arbitrum.git
-cd ape-arbitrum
+git clone https://github.com/theref/ape-scroll.git
+cd ape-scroll
 
 # create and load a virtual environment
 python3 -m venv venv
@@ -14,7 +14,7 @@ source venv/bin/activate
 # install ape
 pip install eth-ape
 
-# install the ape-arbitrum plugin
+# install the ape-scroll plugin
 python setup.py install
 
 # install the developer dependencies (-e is interactive mode)

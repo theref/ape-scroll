@@ -1,6 +1,6 @@
 # Quick Start
 
-Ecosystem Plugin for Arbitrum support in Ape.
+Ecosystem Plugin for Scroll support in Ape.
 
 ## Dependencies
 
@@ -13,7 +13,7 @@ Ecosystem Plugin for Arbitrum support in Ape.
 You can install this plugin using `ape`:
 
 ```bash
-ape plugins install arbitrum
+ape plugins install scroll
 ```
 
 or via config file:
@@ -21,7 +21,7 @@ or via config file:
 ```yaml
 # ape-config.yaml
 plugins:
-  - name: arbitrum
+  - name: scroll
 ```
 
 ### via `pip`
@@ -29,7 +29,7 @@ plugins:
 You can install the latest release via [`pip`](https://pypi.org/project/pip/):
 
 ```bash
-pip install ape-arbitrum
+pip install ape-scroll
 ```
 
 ### via `setuptools`
@@ -37,17 +37,17 @@ pip install ape-arbitrum
 You can clone the repository and use [`setuptools`](https://github.com/pypa/setuptools) for the most up-to-date version:
 
 ```bash
-git clone https://github.com/ApeWorX/ape-arbitrum.git
-cd ape-arbitrum
+git clone https://github.com/theref/ape-scroll.git
+cd ape-scroll
 python3 setup.py install
 ```
 
 ## Quick Usage
 
-Installing this plugin adds support for the Arbitrum ecosystem:
+Installing this plugin adds support for the Scroll ecosystem:
 
 ```bash
-ape console --network arbitrum:mainnet
+ape console --network scroll:testnet
 ```
 
 ## Development
