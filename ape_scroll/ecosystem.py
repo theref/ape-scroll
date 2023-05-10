@@ -12,14 +12,13 @@ from eth_utils import add_0x_prefix, decode_hex
 
 NETWORKS = {
     # chain_id, network_id
-    "mainnet": (42161, 42161),
-    "goerli": (421613, 421613),
+    "testnet": (534353, 534353),
 }
 
 
-class ApeArbitrumError(ApeException):
+class ApeScrollError(ApeException):
     """
-    Raised in the ape-arbitrum plugin.
+    Raised in the ape-scroll plugin.
     """
 
 
@@ -37,19 +36,16 @@ def _create_local_config(default_provider: Optional[str] = None) -> NetworkConfi
     )
 
 
-class ArbitrumConfig(PluginConfig):
-    mainnet: NetworkConfig = _create_network_config()
-    mainnet_fork: NetworkConfig = _create_local_config()
-    goerli: NetworkConfig = _create_network_config()
-    goerli_fork: NetworkConfig = _create_local_config()
-    local: NetworkConfig = _create_local_config(default_provider="test")
+class ScrollConfig(PluginConfig):
+    testnet: NetworkConfig = _create_network_config()
+    testnet_fork: NetworkConfig = _create_local_config()
     default_network: str = LOCAL_NETWORK_NAME
 
 
-class Arbitrum(Ethereum):
+class Scroll(Ethereum):
     @property
-    def config(self) -> ArbitrumConfig:  # type: ignore
-        return cast(ArbitrumConfig, self.config_manager.get_config("arbitrum"))
+    def config(self) -> ScrollConfig:  # type: ignore
+        return cast(ScrollConfig, self.config_manager.get_config("scroll"))
 
     def create_transaction(self, **kwargs) -> TransactionAPI:
         """
@@ -115,6 +111,6 @@ def _get_transaction_cls(transaction_type: TransactionType) -> Type[TransactionA
         TransactionType.DYNAMIC: DynamicFeeTransaction,
     }
     if transaction_type not in transaction_types:
-        raise ApeArbitrumError(f"Transaction type '{transaction_type}' not supported.")
+        raise ApeScrollError(f"Transaction type '{transaction_type}' not supported.")
 
     return transaction_types[transaction_type]
