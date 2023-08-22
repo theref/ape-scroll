@@ -65,8 +65,7 @@ class Scroll(Ethereum):
         if "required_confirmations" not in kwargs or kwargs["required_confirmations"] is None:
             # Attempt to use default required-confirmations from `ape-config.yaml`.
             required_confirmations = 0
-            active_provider = self.network_manager.active_provider
-            if active_provider:
+            if active_provider := self.network_manager.active_provider:
                 required_confirmations = active_provider.network.required_confirmations
 
             kwargs["required_confirmations"] = required_confirmations
