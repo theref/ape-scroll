@@ -47,8 +47,14 @@ python3 setup.py install
 Installing this plugin adds support for the Scroll ecosystem:
 
 ```bash
+// sepolia testnet
 ape console --network scroll:testnet
+
+// mainnet
+ape console --network scroll:mainnet
 ```
+
+For some potential rpc endpoints, see https://chainlist.org/?search=scroll&testnets=true
 
 ## Development
 
