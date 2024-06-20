@@ -1,7 +1,7 @@
 from ape import plugins
 from ape.api import NetworkAPI, create_network_type
 from ape.api.networks import LOCAL_NETWORK_NAME
-from ape_geth import GethProvider
+from ape_node import Node
 from ape_test import LocalProvider
 
 from .ecosystem import NETWORKS, Scroll, ScrollConfig
@@ -30,6 +30,6 @@ def networks():
 @plugins.register(plugins.ProviderPlugin)
 def providers():
     for network_name in NETWORKS:
-        yield "scroll", network_name, GethProvider
+        yield "scroll", network_name, Node
 
     yield "scroll", LOCAL_NETWORK_NAME, LocalProvider
